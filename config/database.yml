@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  
+development:
+  <<: *default
+  database: post_app_development
+
+  
+test:
+  <<: *default
+  database: post_app_test
+
+
+production:
+  <<: *default
+  database: post_app_production
+  username: post_app
+  password: <%= ENV['POST_APP_DATABASE_PASSWORD'] %>
