@@ -1,5 +1,5 @@
 <%= link_to '投稿一覧に戻る', posts_path %>
-<%= form_with(model: @post, local: true) do |form| %>
+<%= form_with(model: @post, local: true, url: choose_new_or_edit) do |form| %>
 
 <% if @post.errors.any? %><!--エラーメッセージを表示 -->
     <div id="error_explanation">
@@ -13,7 +13,7 @@
     </div>
   <% end %>
 
-  <div class="blog_content">
+  <div class="posts_content">
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
