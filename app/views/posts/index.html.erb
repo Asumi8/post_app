@@ -1,20 +1,23 @@
-<h1>投稿一覧</h1>
+<h1 class = "page_title">投稿一覧</h1>
 
 <p><%= notice %></p>
 
-<table>
+<table class = "post_content">
   <tr>
     <th>投稿内容</th>
   </tr>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.content %></td>
-    <td><%= link_to '詳細をみる', post_path(post.id) %></td>
-    <td><%= link_to '編集する', edit_post_path(post.id), data:{confirm:'本当に編集していいですか？'} %></td>
-    <td><%= link_to '削除する', post_path(post.id), method: :delete, data:{confirm:'本当に削除していいですか？'} %></td>
-  </tr>
-<% end %>
+  <div class = "new_post">
+    <%= link_to '新規投稿はこちら', new_post_path %>
+  </div>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.content %></td>
+      <td class = "btn_show"><%= link_to '詳細をみる', post_path(post.id) %></td>
+      <td class = "btn_edit"><%= link_to '編集する', edit_post_path(post.id), data:{confirm:'本当に編集していいですか？'} %></td>
+      <td class = "btn_delete"><%= link_to '削除する', post_path(post.id), method: :delete, data:{confirm:'本当に削除していいですか？'} %></td>
+    </tr>
+  <% end %>
 </table>
 
-<%= link_to '新規投稿はこちら', new_post_path %>
