@@ -1,16 +1,16 @@
 <%= link_to '投稿一覧に戻る', posts_path %>
 <%= form_with(model: @post, local: true, url: choose_new_or_edit) do |form| %>
 
-<% if @post.errors.any? %><!--エラーメッセージを表示 -->
-  <div id="error_explanation">
-    <h2><%= @post.errors.count %>件のエラーがあります。</h2>
-    <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+  <% if @post.errors.any? %><!--エラーメッセージを表示 -->
+    <div id="error_explanation">
+      <h2><%= @post.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %> <!--endはifかdoに対してのもの！-->
+      </ul>
+    </div>
+  <% end %>
 
   <div class="posts_content">
     <%= form.label :content %>

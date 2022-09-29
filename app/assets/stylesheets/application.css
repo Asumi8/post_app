@@ -21,6 +21,11 @@ header .title {
 	justify-content: center;
 }
 
+.notice p{
+  display: flex;
+	justify-content: center;
+}
+
 .post_content{
   display: flex;
 	justify-content: center;

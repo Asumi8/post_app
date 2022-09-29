@@ -1,6 +1,8 @@
 <h1 class = "page_title">投稿一覧</h1>
 
-<p><%= notice %></p>
+<div class="notice">
+  <p><%= notice %></p>
+</div>
 
 <table class = "post_content">
   <tr>
@@ -10,7 +12,7 @@
   <div class = "new_post">
     <%= link_to '新規投稿はこちら', new_post_path %>
   </div>
-
+ 
   <% @posts.each do |post| %>
     <tr>
       <td><%= post.content %></td>
